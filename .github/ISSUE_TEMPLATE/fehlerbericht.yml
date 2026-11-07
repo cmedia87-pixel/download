@@ -1,0 +1,36 @@
+name: Fehlerbericht
+description: Einen Fehler aus der Testversion melden und die Berichtsdatei aus dem Spiel anhängen.
+title: "Fehler: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Danke fürs Testen! So geht's:
+
+        1. Im Spiel **F12** drücken (oder **Esc → Fehler melden**), kurz aufschreiben, was passiert ist, und **Bericht speichern** klicken.
+        2. Die Datei `bugreport-….zip` liegt im Ordner `bugreports` neben `HostileTakeweed.exe`. Das Fenster im Spiel zeigt den Pfad, ein Klick öffnet den Ordner.
+        3. Die ZIP-Datei unten ins Feld **Berichtsdatei** ziehen und auf **Create** klicken.
+
+        Bitte beachten: Alles hier ist **öffentlich sichtbar**. Der Bericht enthält deinen Spielstand, ein Bildschirmfoto des Spiels, die Versionsnummer, Angaben zu Windows und Grafikkarte und das Spiel-Log. Schreib hier nichts Persönliches hinein.
+  - type: textarea
+    id: was
+    attributes:
+      label: Was ist passiert?
+      description: Was hast du gerade gemacht, und was hättest du erwartet?
+    validations:
+      required: true
+  - type: textarea
+    id: datei
+    attributes:
+      label: Berichtsdatei
+      description: Zieh die Datei bugreport-….zip hier hinein (oder klick unten im Feld auf die Büroklammer).
+      placeholder: Datei hier hineinziehen
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version (falls kein Bericht möglich war)
+      description: Steht unten auf dem Startbildschirm und im Pausemenü, zum Beispiel 0.2.88.
+    validations:
+      required: false
